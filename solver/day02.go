@@ -1,6 +1,7 @@
 package solver
 
 import (
+	"shaokun-x/aoc-2025/utils"
 	"strconv"
 	"strings"
 )
@@ -112,7 +113,7 @@ func (s *Solver2) getPreviousInvalidRoot(n int, pow int) int {
 		}
 		if num < nums[0] {
 			// special case, nums[0] is power of 10
-			if nums[0] == s.pow(10, pow-1) {
+			if nums[0] == utils.Pow(10, pow-1) {
 				return 0
 			}
 			return nums[0] - 1
@@ -126,7 +127,7 @@ func (s *Solver2) buildInvalid(root, repeat int) int {
 	digs := s.getDigits(root)
 	result := 0
 	for i := 0; i < repeat; i++ {
-		result += root * s.pow(10, i*digs)
+		result += root * utils.Pow(10, i*digs)
 	}
 	return result
 }
@@ -166,21 +167,10 @@ func (s *Solver2) divide(lower, upper int) [][2]int {
 
 	var result [][2]int
 	for i := ldig; i <= udig; i++ {
-		start := max(lower, s.pow(10, i-1))
-		end := min(upper, s.pow(10, i)-1)
+		start := max(lower, utils.Pow(10, i-1))
+		end := min(upper, utils.Pow(10, i)-1)
 		result = append(result, [2]int{start, end})
 	}
 
 	return result
-}
-
-func (s *Solver2) pow(n, p int) int {
-	if p == 0 {
-		return 1
-	}
-	base := n
-	for i := 0; i < p-1; i++ {
-		n *= base
-	}
-	return n
 }

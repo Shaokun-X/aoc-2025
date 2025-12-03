@@ -16,6 +16,7 @@ type Selector interface {
 var solverRegistry = map[int]Selector{
 	1: solver.NewSolver1(),
 	2: solver.NewSolver2(),
+	3: solver.NewSolver3(),
 }
 
 func main() {
