@@ -4,8 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	solver "shaokun-x/aoc-2025/solver"
-	reader "shaokun-x/aoc-2025/utils"
+	"shaokun-x/aoc-2025/solver"
+	"shaokun-x/aoc-2025/utils"
 	"strconv"
 )
 
@@ -17,6 +17,7 @@ var solverRegistry = map[int]Selector{
 	1: solver.NewSolver1(),
 	2: solver.NewSolver2(),
 	3: solver.NewSolver3(),
+	4: solver.NewSolver4(),
 }
 
 func main() {
@@ -34,7 +35,7 @@ func main() {
 	}
 
 	// read data
-	rdr := reader.Reader{BasePath: "./data"}
+	rdr := utils.Reader{BasePath: "./data"}
 	var data []string
 	if *real {
 		data = rdr.ReadReal(day)
