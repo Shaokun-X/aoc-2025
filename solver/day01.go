@@ -14,7 +14,7 @@ func NewSolver1() *Solver1 {
 	return s
 }
 
-func parse(data []string) []int {
+func (s *Solver1) parse(data []string) []int {
 	var steps []int
 
 	for _, line := range data {
@@ -32,7 +32,7 @@ func parse(data []string) []int {
 func (s *Solver1) runSimple(data []string) string {
 	pos := 50
 	numbers := 100
-	steps := parse(data)
+	steps := s.parse(data)
 
 	result := 0
 	for _, step := range steps {
@@ -52,7 +52,7 @@ func (s *Solver1) runSimple(data []string) string {
 func (s *Solver1) runNormal(data []string) string {
 	pos := 50
 	numbers := 100
-	steps := parse(data)
+	steps := s.parse(data)
 
 	result := 0
 	for _, step := range steps {
