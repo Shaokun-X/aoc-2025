@@ -20,6 +20,7 @@ var solverRegistry = map[int]Selector{
 	4: solver.NewSolver4(),
 	5: solver.NewSolver5(),
 	6: solver.NewSolver6(),
+	7: solver.NewSolver7(),
 }
 
 func main() {
