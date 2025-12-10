@@ -14,15 +14,16 @@ type Selector interface {
 }
 
 var solverRegistry = map[int]Selector{
-	1: solver.NewSolver1(),
-	2: solver.NewSolver2(),
-	3: solver.NewSolver3(),
-	4: solver.NewSolver4(),
-	5: solver.NewSolver5(),
-	6: solver.NewSolver6(),
-	7: solver.NewSolver7(),
-	8: solver.NewSolver8(),
-	9: solver.NewSolver9(),
+	1:  solver.NewSolver1(),
+	2:  solver.NewSolver2(),
+	3:  solver.NewSolver3(),
+	4:  solver.NewSolver4(),
+	5:  solver.NewSolver5(),
+	6:  solver.NewSolver6(),
+	7:  solver.NewSolver7(),
+	8:  solver.NewSolver8(),
+	9:  solver.NewSolver9(),
+	10: solver.NewSolver10(),
 }
 
 func main() {
